@@ -16,8 +16,8 @@ type GeneInfo {
   _id: String
   accessionId: String
   name: String
-  start: Int
-  end: Int
+  startPosition: Int
+  endPosition: Int
   strand: String
   sequence: String
   length: Int
@@ -49,8 +49,8 @@ Transcript information
 type Transcript {
   _id: String
   accessionId: String
-  start: Int
-  end: Int
+  startPosition: Int
+  endPosition: Int
   strand: String
   sequence: String
   length: Int
@@ -66,8 +66,8 @@ UTR details
 type UTR {
   accessionId: String
   name: String
-  start: Int
-  end: Int
+  startPosition: Int
+  endPosition: Int
   strand: String
   type: String
   sequence: String
@@ -80,8 +80,8 @@ Exon details
 type Exon {
   accessionId: String
   name: String
-  start: Int
-  end: Int
+  startPosition: Int
+  endPosition: Int
   strand: String
   type: String
   sequence: String
@@ -94,8 +94,8 @@ CD details
 type CD {
   accessionId: String
   name: String
-  start: Int
-  end: Int
+  startPosition: Int
+  endPosition: Int
   strand: String
   type: String
   phase: Int
@@ -113,7 +113,6 @@ type Product {
   sequence: String
   length: Int
   aminoacidSequence: String
-  aminoacidLength: Int
 }
 
 type Query {
