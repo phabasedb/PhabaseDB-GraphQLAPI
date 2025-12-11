@@ -66,6 +66,7 @@ const productSchema = new mongoose.Schema({
   sequence: { type: String, match: /^[ATCGatcgnN]*$/ },
   length: Number,
   aminoacidSequence: String,
+  aminoacidLength: Number,
 });
 
 const transcriptSchema = new mongoose.Schema({
