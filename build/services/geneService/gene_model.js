@@ -81,7 +81,7 @@ var productSchema = new _mongoose["default"].Schema({
   },
   length: Number,
   aminoacidSequence: String,
-  aminoacidLength: String
+  aminoacidLength: Number
 });
 var transcriptSchema = new _mongoose["default"].Schema({
   _id: String,

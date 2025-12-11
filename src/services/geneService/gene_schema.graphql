@@ -113,7 +113,7 @@ type Product {
   sequence: String
   length: Int
   aminoacidSequence: String
-  aminoacidLength: String
+  aminoacidLength: Int
 }
 
 type Query {
