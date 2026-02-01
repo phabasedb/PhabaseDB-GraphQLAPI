@@ -10,8 +10,8 @@ var geneInfoSchema = new _mongoose["default"].Schema({
   _id: String,
   accessionId: String,
   name: String,
-  startPosition: Number,
-  endPosition: Number,
+  start: Number,
+  end: Number,
   strand: String,
   sequence: {
     type: String,
@@ -34,8 +34,8 @@ var chromosomeSchema = new _mongoose["default"].Schema({
 var utrSchema = new _mongoose["default"].Schema({
   accessionId: String,
   name: String,
-  startPosition: Number,
-  endPosition: Number,
+  start: Number,
+  end: Number,
   strand: String,
   type: String,
   sequence: {
@@ -47,8 +47,8 @@ var utrSchema = new _mongoose["default"].Schema({
 var exonSchema = new _mongoose["default"].Schema({
   accessionId: String,
   name: String,
-  startPosition: Number,
-  endPosition: Number,
+  start: Number,
+  end: Number,
   strand: String,
   type: String,
   sequence: {
@@ -60,8 +60,8 @@ var exonSchema = new _mongoose["default"].Schema({
 var cdSchema = new _mongoose["default"].Schema({
   accessionId: String,
   name: String,
-  startPosition: Number,
-  endPosition: Number,
+  start: Number,
+  end: Number,
   strand: String,
   type: String,
   phase: Number,
@@ -86,8 +86,8 @@ var productSchema = new _mongoose["default"].Schema({
 var transcriptSchema = new _mongoose["default"].Schema({
   _id: String,
   accessionId: String,
-  startPosition: Number,
-  endPosition: Number,
+  start: Number,
+  end: Number,
   strand: String,
   sequence: {
     type: String,
