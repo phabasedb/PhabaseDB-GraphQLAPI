@@ -1,13 +1,11 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true,
+  value: true
 });
 exports.Gene = void 0;
 var _mongoose = _interopRequireDefault(require("mongoose"));
-function _interopRequireDefault(e) {
-  return e && e.__esModule ? e : { default: e };
-}
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var geneInfoSchema = new _mongoose["default"].Schema({
   _id: String,
   accessionId: String,
@@ -17,21 +15,21 @@ var geneInfoSchema = new _mongoose["default"].Schema({
   strand: String,
   sequence: {
     type: String,
-    match: /^[ATCGatcgnN]*$/,
+    match: /^[ATCGatcgnN]*$/
   },
   length: Number,
-  description: String,
+  description: String
 });
 var orgaInfoSchema = new _mongoose["default"].Schema({
   _id: String,
   name: String,
-  description: String,
+  description: String
 });
 var chromosomeSchema = new _mongoose["default"].Schema({
   _id: String,
   name: String,
   type: String,
-  description: String,
+  description: String
 });
 var utrSchema = new _mongoose["default"].Schema({
   accessionId: String,
@@ -42,9 +40,9 @@ var utrSchema = new _mongoose["default"].Schema({
   type: String,
   sequence: {
     type: String,
-    match: /^[ATCGatcgnN]*$/,
+    match: /^[ATCGatcgnN]*$/
   },
-  length: Number,
+  length: Number
 });
 var exonSchema = new _mongoose["default"].Schema({
   accessionId: String,
@@ -55,9 +53,9 @@ var exonSchema = new _mongoose["default"].Schema({
   type: String,
   sequence: {
     type: String,
-    match: /^[ATCGatcgnN]*$/,
+    match: /^[ATCGatcgnN]*$/
   },
-  length: Number,
+  length: Number
 });
 var cdSchema = new _mongoose["default"].Schema({
   accessionId: String,
@@ -69,9 +67,9 @@ var cdSchema = new _mongoose["default"].Schema({
   phase: Number,
   sequence: {
     type: String,
-    match: /^[ATCGatcgnN]*$/,
+    match: /^[ATCGatcgnN]*$/
   },
-  length: Number,
+  length: Number
 });
 var productSchema = new _mongoose["default"].Schema({
   _id: String,
@@ -79,11 +77,11 @@ var productSchema = new _mongoose["default"].Schema({
   cdsIds: [String],
   sequence: {
     type: String,
-    match: /^[ATCGatcgnN]*$/,
+    match: /^[ATCGatcgnN]*$/
   },
   length: Number,
   aminoacidSequence: String,
-  aminoacidLength: Number,
+  aminoacidLength: Number
 });
 var transcriptSchema = new _mongoose["default"].Schema({
   _id: String,
@@ -93,23 +91,19 @@ var transcriptSchema = new _mongoose["default"].Schema({
   strand: String,
   sequence: {
     type: String,
-    match: /^[ATCGatcgnN]*$/,
+    match: /^[ATCGatcgnN]*$/
   },
   length: Number,
   utrs: [utrSchema],
   exons: [exonSchema],
   cds: [cdSchema],
-  product: productSchema,
+  product: productSchema
 });
 var geneSchema = new _mongoose["default"].Schema({
   _id: String,
   gene: geneInfoSchema,
   organism: orgaInfoSchema,
   chromosome: chromosomeSchema,
-  transcripts: [transcriptSchema],
+  transcripts: [transcriptSchema]
 });
-var Gene = (exports.Gene = _mongoose["default"].model(
-  "genesDatamart",
-  geneSchema,
-  "genesDatamart",
-));
+var Gene = exports.Gene = _mongoose["default"].model("genesDatamart", geneSchema, "genesDatamart");

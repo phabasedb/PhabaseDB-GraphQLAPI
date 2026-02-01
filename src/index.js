@@ -72,18 +72,22 @@ const configApolloServer = async () => {
   // create an instance of express to be used with ApolloServer
   const app = express();
 
+  app.set("trust proxy", 1);
+
   //Set a variable to limit requests
   const limiter = rateLimit({
-    windowMs: 60000,
-    max: 1000,
+    windowMs: 60 * 1000,
+    max: 300,
+    standardHeaders: true,
+    legacyHeaders: false,
     message: {
-      message: "Too many requests",
+      message: "Too many GraphQL requests",
       statusCode: 429,
     },
   });
 
   //Assign limit to the API
-  app.use(limiter);
+  app.use("/graphql", limiter);
 
   //adding an await to start the closedToolsServer
   await serverDataServices.start();
@@ -105,7 +109,7 @@ const configApolloServer = async () => {
   console.log(
     `El servidor esta funcionando en http://localhost:${
       servExpress.address().port
-    }${serverDataServices.graphqlPath}`
+    }${serverDataServices.graphqlPath}`,
   );
 };
 
